@@ -32,11 +32,6 @@ const colors = {
 	}
 };
 
-const fonts = {
-	body: "'Roboto', sans-serif",
-	heading: "'Poppins', sans-serif"
-};
-
 const components = {
 	Button: {
 		variants: {
@@ -70,7 +65,6 @@ const styles = {
 const theme = extendTheme({
 	config,
 	colors,
-	fonts,
 	components,
 	container,
 	styles
