@@ -21,7 +21,7 @@ function GameCard({ game }: Props): JSX.Element {
 						{game.name}
 					</Heading>
 				</Box>
-				<HStack marginY={2} alignSelf='flex-end'>
+				<HStack marginTop={2} alignSelf='flex-end'>
 					<Emoji rating={game.rating_top} />
 					<CriticScore score={game.metacritic} />
 				</HStack>
