@@ -14,11 +14,13 @@ function GameCard({ game }: Props): JSX.Element {
 		<Card height='400px'>
 			<Image src={getCropedImageURL(game.background_image)} />
 			<CardBody display='flex' flexDirection='column'>
-				<Heading fontSize='2xl'>{game.name}</Heading>
-				<HStack justifyContent='space-between' mt='auto'>
+				<HStack justifyContent='space-between'>
 					<PlatformIconList platforms={game.parent_platforms.map((p) => p.platform)} />
 					<CriticScore score={game.metacritic} />
 				</HStack>
+				<Heading fontSize='2xl' marginY={2}>
+					{game.name}
+				</Heading>
 			</CardBody>
 		</Card>
 	);
