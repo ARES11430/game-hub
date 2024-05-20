@@ -1,4 +1,4 @@
-import { Card, CardBody, Heading, HStack, Image, Stack } from '@chakra-ui/react';
+import { Box, Card, CardBody, Heading, HStack, Image, Stack } from '@chakra-ui/react';
 
 import { Game } from '../hooks/useGames';
 import PlatformIconList from './PlatformIconList';
@@ -12,19 +12,19 @@ interface Props {
 
 function GameCard({ game }: Props): JSX.Element {
 	return (
-		<Card height='400px'>
+		<Card display='flex' flexDirection='column' flex='1'>
 			<Image src={getCropedImageURL(game.background_image)} />
-			<CardBody display='flex' flexDirection='column'>
-				<HStack justifyContent='space-between'>
+			<CardBody display='flex' flexDirection='column' justifyContent='space-between' flex='1'>
+				<Box>
 					<PlatformIconList platforms={game.parent_platforms.map((p) => p.platform)} />
-					<HStack>
-						<Emoji rating={game.rating_top} />
-						<CriticScore score={game.metacritic} />
-					</HStack>
+					<Heading fontSize='2xl' marginY={2}>
+						{game.name}
+					</Heading>
+				</Box>
+				<HStack marginY={2} alignSelf='flex-end'>
+					<Emoji rating={game.rating_top} />
+					<CriticScore score={game.metacritic} />
 				</HStack>
-				<Heading fontSize='2xl' marginY={2}>
-					{game.name}
-				</Heading>
 			</CardBody>
 		</Card>
 	);
