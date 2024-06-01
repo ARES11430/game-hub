@@ -9,8 +9,8 @@ import PlatformSelector from './components/PlatformSelector';
 import SortSelector from './components/SortSelector';
 
 // *interface
-import { Genre } from './hooks/useGenres';
-import { Platform } from './hooks/usePlatforms';
+import { Genre } from './services/genreService';
+import { Platform } from './services/platformService';
 import GameHeading from './components/GameHeading';
 
 export interface GameQuery {

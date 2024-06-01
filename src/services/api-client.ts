@@ -15,8 +15,8 @@ export interface FetchResponse<T> {
 class APIClient<T> {
 	constructor(private endpoint: string) {}
 
-	getAll = async (confit: AxiosRequestConfig): Promise<FetchResponse<T>> => {
-		return await axiosInstance.get<FetchResponse<T>>(this.endpoint).then((res) => res.data);
+	getAll = async (config: AxiosRequestConfig): Promise<FetchResponse<T>> => {
+		return await axiosInstance.get<FetchResponse<T>>(this.endpoint, config).then((res) => res.data);
 	};
 
 	post = async (data: T): Promise<T> => {
