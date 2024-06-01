@@ -5,10 +5,10 @@ import getCropedImageURL from '../services/image-url';
 
 interface Props {
 	onSelectGenre: (genre: Genre) => void;
-	selectedGenre: Genre | null;
+	selectedGenreId?: number;
 }
 
-function GenresList({ onSelectGenre, selectedGenre }: Props) {
+function GenresList({ onSelectGenre, selectedGenreId }: Props) {
 	const { data: genres, isLoading, error } = useGenres();
 
 	if (error) return null;
@@ -31,7 +31,7 @@ function GenresList({ onSelectGenre, selectedGenre }: Props) {
 							<Button
 								whiteSpace='normal'
 								textAlign='left'
-								colorScheme={genre.id === selectedGenre?.id ? 'blue' : ''}
+								colorScheme={genre.id === selectedGenreId ? 'blue' : ''}
 								onClick={() => onSelectGenre(genre)}
 								variant='link'
 								fontSize='lg'
