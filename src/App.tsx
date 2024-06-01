@@ -10,7 +10,7 @@ import SortSelector from './components/SortSelector';
 
 // *interface
 import { Genre } from './hooks/useGenres';
-import { Platform } from './hooks/useGames';
+import { Platform } from './hooks/usePlatforms';
 import GameHeading from './components/GameHeading';
 
 export interface GameQuery {
