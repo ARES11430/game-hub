@@ -20,6 +20,10 @@ class APIClient<T> {
 		return await axiosInstance.get<FetchResponse<T>>(this.endpoint, config).then((res) => res.data);
 	};
 
+	get = async (id: number | string) => {
+		return await axiosInstance.get<T>(this.endpoint + '/' + id).then((res) => res.data);
+	};
+
 	post = async (data: T): Promise<T> => {
 		return await axiosInstance.post<T>(this.endpoint, data).then((res) => res.data);
 	};

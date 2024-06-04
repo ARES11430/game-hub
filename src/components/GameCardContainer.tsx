@@ -7,7 +7,14 @@ interface Props {
 
 function GameCardContainer({ children }: Props) {
 	return (
-		<Box borderRadius={15} overflow='hidden' display='flex' flexDirection='column' height='100%'>
+		<Box
+			_hover={{ transform: 'scale(1.05)', transition: 'transform 0.15s ease-in' }}
+			borderRadius={15}
+			overflow='hidden'
+			display='flex'
+			flexDirection='column'
+			height='100%'
+		>
 			{children}
 		</Box>
 	);

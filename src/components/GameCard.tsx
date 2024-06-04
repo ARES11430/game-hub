@@ -5,6 +5,7 @@ import PlatformIconList from './PlatformIconList';
 import CriticScore from './CriticScore';
 import getCropedImageURL from '../services/image-url';
 import Emoji from './Emoji';
+import { Link } from 'react-router-dom';
 
 interface Props {
 	game: Game;
@@ -18,7 +19,7 @@ function GameCard({ game }: Props): JSX.Element {
 				<Box>
 					<PlatformIconList platforms={game.parent_platforms.map((p) => p.platform)} />
 					<Heading fontSize='2xl' marginY={2}>
-						{game.name}
+						<Link to={`/games/${game.slug}`}>{game.name}</Link>
 					</Heading>
 				</Box>
 				<HStack marginTop={2} alignSelf='flex-end'>
