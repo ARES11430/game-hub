@@ -1,4 +1,4 @@
-import { ScreenShot } from '../models/ScreenShot';
+import ScreenShot from '../models/ScreenShot';
 import APIClient from './api-client';
 
 const screenShotService = (gameId: number) => {
