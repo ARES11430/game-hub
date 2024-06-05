@@ -16,9 +16,7 @@ const GameTrailer = ({ gameId }: Props): JSX.Element | null => {
 
 	return first ? (
 		<>
-			<Heading size='md' marginY={5}>
-				Game Trailer
-			</Heading>
+			<Heading marginY={5}>Game Trailer</Heading>
 			<Box
 				as='video'
 				src={first.data[480]}

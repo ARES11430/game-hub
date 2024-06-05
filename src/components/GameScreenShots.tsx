@@ -14,9 +14,7 @@ const GameScreenShots = ({ gameId }: Props) => {
 
 	return (
 		<>
-			<Heading size='md' marginY={5}>
-				Screen Shots
-			</Heading>
+			<Heading marginY={5}>Screen Shots</Heading>
 			<SimpleGrid columns={{ base: 1, md: 2 }} spacing={3}>
 				{screenShots?.results.map((sc) => (
 					<Box key={sc.id} overflow='hidden'>
