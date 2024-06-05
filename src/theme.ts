@@ -1,4 +1,19 @@
-import { extendTheme, ThemeConfig, StyleFunctionProps } from '@chakra-ui/react';
+import {
+	extendTheme,
+	ThemeConfig,
+	StyleFunctionProps,
+	defineStyle,
+	defineStyleConfig
+} from '@chakra-ui/react';
+
+const xxl = defineStyle({
+	height: 500,
+	width: 500
+});
+
+export const spinnerTheme = defineStyleConfig({
+	sizes: { xxl }
+});
 
 const config: ThemeConfig = {
 	initialColorMode: 'dark',
@@ -26,7 +41,7 @@ const colors = {
 	},
 	dark: {
 		background: '#121212', // Very dark background
-		text: '#cbd5e0', // Cool light gray text
+		text: '#ffffff', // Cool light gray text
 		primary: '#90cdf4', // Cool blue primary
 		secondary: '#718096' // Cool dark gray secondary
 	}
@@ -43,7 +58,8 @@ const components = {
 				}
 			})
 		}
-	}
+	},
+	Spinner: { spinnerTheme }
 };
 
 const container = {

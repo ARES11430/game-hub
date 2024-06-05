@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { Heading, Spinner, Text } from '@chakra-ui/react';
+import { Box, Heading, Spinner, Text } from '@chakra-ui/react';
 
 import useGame from '../hooks/useGame';
 
@@ -7,16 +7,21 @@ const GameDetailPage = () => {
 	const { slug } = useParams();
 	const { data: game, isLoading, error } = useGame(slug!);
 
-	if (isLoading) return <Spinner />;
+	if (isLoading)
+		return (
+			<Box textAlign='center' marginY='20%'>
+				<Spinner thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' />
+			</Box>
+		);
 
 	if (error || !game) throw error;
 
 	return (
 		<>
-			<Heading paddingX={500} marginY={5}>
+			<Heading paddingX='10%' marginY={5}>
 				{game.name}
 			</Heading>
-			<Text paddingX={500} marginY={5} textAlign='justify'>
+			<Text paddingX='10%' marginY={5} textAlign='justify'>
 				{game.description_raw}
 			</Text>
 		</>
