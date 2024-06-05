@@ -17,14 +17,10 @@ const GameDetailPage = () => {
 	if (error || !game) throw error;
 
 	return (
-		<>
-			<Heading paddingX='10%' marginY={5}>
-				{game.name}
-			</Heading>
-			<Text paddingX='10%' marginY={5} textAlign='justify'>
-				{game.description_raw}
-			</Text>
-		</>
+		<Box paddingX='10%' marginY={5}>
+			<Heading marginBottom={3}>{game.name}</Heading>
+			<Text textAlign='justify'>{game.description_raw}</Text>
+		</Box>
 	);
 };
 
