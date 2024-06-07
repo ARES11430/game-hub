@@ -13,7 +13,7 @@ function NavBar(): JSX.Element {
 	return (
 		<HStack justifyContent='space-between' padding='10px'>
 			<Link to='/'>
-				<Image src={logo} boxSize='50px' objectFit='cover' />
+				<Image src={logo} boxSize={{ base: '70px', sm: '70px' }} objectFit='contain' />
 			</Link>
 			<SearchInput />
 			<SwitchColorMode />
