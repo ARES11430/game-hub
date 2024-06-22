@@ -11,6 +11,7 @@ import theme from './theme.ts';
 
 // * router
 import router from './routes.tsx';
+import { HelmetProvider } from 'react-helmet-async';
 
 const client = new QueryClient({
 	defaultOptions: {
@@ -30,8 +31,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 		<ChakraProvider theme={theme}>
 			<ColorModeScript initialColorMode={theme.config.initialColorMode} />
 			<QueryClientProvider client={client}>
-				<RouterProvider router={router} />
-				<ReactQueryDevtools />
+				<HelmetProvider>
+					<RouterProvider router={router} />
+					<ReactQueryDevtools />
+				</HelmetProvider>
 			</QueryClientProvider>
 		</ChakraProvider>
 	</React.StrictMode>

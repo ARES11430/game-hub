@@ -7,6 +7,7 @@ import ExpandableText from '../components/ExpandableText';
 import GameAttributes from '../components/GameAttributes';
 import GameTrailer from '../components/GameTrailer';
 import GameScreenShots from '../components/GameScreenShots';
+import { Helmet } from 'react-helmet-async';
 
 const GameDetailPage = () => {
 	const { slug } = useParams();
@@ -23,6 +24,10 @@ const GameDetailPage = () => {
 
 	return (
 		<SimpleGrid columns={{ base: 1, md: 2 }} paddingX='2%' marginY={10}>
+			<Helmet>
+				<title>Game Hub | {game.name}</title>
+				<meta name='description' content={game.description_raw} />
+			</Helmet>
 			<Box paddingX='2%'>
 				<Heading marginBottom={3}>{game.name}</Heading>
 				<ExpandableText>{game.description_raw}</ExpandableText>
