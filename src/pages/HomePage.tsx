@@ -5,6 +5,7 @@ import GameHeading from '../components/GameHeading';
 import GenresList from '../components/GenresList';
 import PlatformSelector from '../components/PlatformSelector';
 import SortSelector from '../components/SortSelector';
+import { Helmet } from 'react-helmet-async';
 
 const HomePage = () => {
 	const [showAside, setShowAside] = useState(false);
@@ -13,6 +14,10 @@ const HomePage = () => {
 
 	return (
 		<Box>
+			<Helmet>
+				<title>Game Hub</title>
+				<meta name='description' content='game hub is a place for gamers!' />
+			</Helmet>
 			<Show below='lg'>
 				<Button onClick={toggleAside} marginX={showAside ? 5 : 3} marginBottom={4}>
 					{showAside ? 'Hide Genres' : 'Show Genres'}
